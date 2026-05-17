@@ -17,7 +17,7 @@ app = FastAPI(title="Deal Risk Radar API")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://pulse-frontend-production-20c1.up.railway.app/"],
+    allow_origins=["https://pulse-frontend-production-20c1.up.railway.app"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
