@@ -62,9 +62,9 @@ def get_deal(deal_id: str):
 @app.get("/api/summary")
 def summary():
 
-    red = [d for d in _DEALS_SCORED if d["bucket"] == "red"]
-    yellow = [d for d in _DEALS_SCORED if d["bucket"] == "yellow"]
-    green = [d for d in _DEALS_SCORED if d["bucket"] == "green"]
+    critical = [d for d in _DEALS_SCORED if d["bucket"] == "red"]
+    watch = [d for d in _DEALS_SCORED if d["bucket"] == "yellow"]
+    safe = [d for d in _DEALS_SCORED if d["bucket"] == "green"]
 
     pipeline_at_risk = sum(d["amount"] for d in red + yellow)
     total_pipeline = sum(d["amount"] for d in _DEALS_SCORED)
@@ -95,9 +95,9 @@ def summary():
         "total_deals": len(_DEALS_SCORED),
         "total_pipeline": total_pipeline,
         "pipeline_at_risk": pipeline_at_risk,
-        "red_count": len(red),
-        "yellow_count": len(yellow),
-        "green_count": len(green),
+        "red_count": len(critical),
+        "yellow_count": len(watch),
+        "green_count": len(safe),
         "avg_silence_days": avg_silence_days,
         "rep_leaderboard": leaderboard,
     }
