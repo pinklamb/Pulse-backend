@@ -2,6 +2,10 @@
 
 FastAPI backend for scoring pipeline risk and generating AI-powered re-engagement emails.
 
+
+**Api Documentation** = [pulse_api_docs.pdf](https://github.com/user-attachments/files/27939049/pulse_api_docs.pdf)
+
+
 ## Tech Stack
 
 - **FastAPI** for REST API
